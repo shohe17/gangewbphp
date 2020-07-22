@@ -24,7 +24,7 @@ git clone https://github.com/shohe17/gangewbphp.git
 2. dockerコンテナを起動
 ```
 cd docker
-docker-compose up -d
+docker-compose up —-build -d
 ```
 
 3. 必要なライブラリのインストール
