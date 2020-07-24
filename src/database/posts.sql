@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: db
--- 生成日時: 2020 年 7 月 24 日 11:41
+-- 生成日時: 2020 年 7 月 24 日 12:02
 -- サーバのバージョン： 5.7.30
 -- PHP のバージョン: 7.4.6
 
@@ -24,16 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 ``
+-- テーブルの構造 `posts`
 --
 
-CREATE TABLE `` (
+CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
-  `password` int(20) NOT NULL,
-  `email` int(50) NOT NULL,
-  `created_at` int(11) NOT NULL,
-  `image_at` int(11) NOT NULL,
-  `filed` blob NOT NULL
+  `user_id` int(11) NOT NULL,
+  `title` int(25) NOT NULL,
+  `field` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
 
