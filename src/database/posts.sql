@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `title` int(25) NOT NULL,
+  `title` varchar(30) NOT NULL,
   `image_at`  text NOT NULL
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
