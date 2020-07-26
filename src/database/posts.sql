@@ -31,7 +31,9 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `title` int(25) NOT NULL,
-  `field` blob NOT NULL
+  `image_at`  text NOT NULL
+  `updated_at` int(11) NOT NULL,
+  `created_at` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
 

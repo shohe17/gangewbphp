@@ -27,13 +27,12 @@ SET time_zone = "+00:00";
 -- テーブルの構造 ``
 --
 
-CREATE TABLE `` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `password` int(20) NOT NULL,
   `email` int(50) NOT NULL,
   `created_at` int(11) NOT NULL,
-  `image_at` int(11) NOT NULL,
-  `filed` blob NOT NULL
+  `image_at`  text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
 

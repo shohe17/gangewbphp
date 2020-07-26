@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `follows` (
   `id` int(255) NOT NULL,
-  `users_id` int(11) NOT NULL,
-  `followed_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `follower_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
 

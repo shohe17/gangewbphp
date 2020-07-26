@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `likes` (
   `id` int(11) NOT NULL,
-  `usre_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
