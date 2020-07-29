@@ -1,10 +1,9 @@
 <?php
-//新規投稿ポストのデータ
-
 //Model読み込み
 require_once('Model.php');
 //クラス指定
-class Post extends Model{
+class Post extends Model
+{
 
   //プロパティ指定
   protected $table = 'posts';
@@ -13,7 +12,7 @@ class Post extends Model{
   {
       // INSERT INTO (カラム名, ,) VALUES (値, 値, 値,)
       //処理を準備 
-      $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(id, title, picture) VALUE(?, ?, ?)');
+      $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(id, title, image_at) VALUE(?, ?, ?)');
       
       //実行
       $stmt->execute($data);
@@ -32,6 +31,8 @@ class Post extends Model{
     return $posts;
 
   }
+
+
 
   //画像を選択するメソッド
 

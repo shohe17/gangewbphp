@@ -1,10 +1,10 @@
 <?php
-//一覧表示のページ
 
 //データベース読み込み
 require_once('dbconnect.php');
 //modelクラスを指定
-class Model {
+class Model 
+{
   //Modelクラスにプロパティ（データ）定義
   protected $table; 
   protected $db_manager;
@@ -41,22 +41,9 @@ class Model {
 
   }
 
-  //dbからidで探すメソッド
-  public function findById($id)
-  {
-    //見つける分を準備
-    $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
-    //実行
-    $stmt->execute($id);
-    //表示する
-    $posts = $stmt->fetch();
-    return $posts;
-    //戻す
-  }
     //フォローボタン
     //いいねボタン
-    //コメントボタン
-    
+     //コメントボタン
 }
 
 

@@ -1,11 +1,7 @@
 <?php
 //一覧表示
 //データ読み込み
-require_once('Model.php');
-
-// $id = $_POST['id'];
-// $title = $_POST['title'];
-// $picture = $_POST['picture'];
+require_once('Models/Post.php');
 
 //$postにインスタンスを代入
 $post = new Post();
@@ -19,6 +15,22 @@ if(isset($_GET['title'])){
   //値が入っていない場合
   $posts = $post->getAll();
 }
+
+$dsn = "mysql:host=localhost; dbname=gangphp; charset=utf8mb4";
+$username = "xxx";
+$password = "xxx";
+$id = rand(1, 5);
+try {
+  $dbh = new PDO($dsn, $username, $password);
+} catch (PDOException $e) {
+  echo $e->getMessage();
+}
+  $sql = 'SELECT * FROM gangphp WHERE id = id';
+  $stmt = $dbh->prepare($sql);
+  $stmt->bindValue(':id', $id);
+  $stmt->execute();
+  $image = $stmt->fetch();
+  
 
 //オブジェクトにユーザー名を配置
 //オブジェクトにタイトル配置
