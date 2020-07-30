@@ -1,9 +1,11 @@
 <?php 
 
+//dbに接続するためのクラス
 class DbManager
 {
   //DbManagerクラスに$dbhプロパティをいれた
   public $dbh;
+  //dbに接続する処理をしている
   public function connect()
   {
 
@@ -24,7 +26,7 @@ class DbManager
 
     $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
     try {
-      $dsn = new PDO($dsn, $user, $password, $options);
+      $this->dbh = new PDO($dsn, $user, $password, $options);
     } catch (\PDOException $e) {
       var_dump($e->getMessage());
       exit;

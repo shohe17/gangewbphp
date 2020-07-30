@@ -1,7 +1,9 @@
 <?php
-//Model読み込み
+//ポストテーブルに関連する処理をするためのクラス
+//Modelファイルw読み込み
 require_once('Model.php');
 //クラス指定
+//modlphpを継承している
 class Post extends Model
 {
 
