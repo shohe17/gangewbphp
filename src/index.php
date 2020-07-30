@@ -9,10 +9,14 @@ $post = new Post();
 //issetは変数に値が入っているかどうか確認する関数
 //もし受け取った変数GETに値titleがはいってた場合{}の内側を処理
 if(isset($_GET['title'])){
+  //変数titleを受け取った場合
+  //変数名$titleにgetされて受け取った変数titleを入れる
   $title = $_GET['title'];
+  //変数名$postsに変数名$postの、検索時にタイトルの一部が一致しているものを抽出
   $posts = $post->findByTitle(["%$title%"]);
 } else {
   //値が入っていない場合
+  //$postsに$postの全て表示する
   $posts = $post->getAll();
 }
 
@@ -50,5 +54,6 @@ try {
 </head>
 <body>
     <h1>トップページ</h1>
+
 </body>
 </html>
