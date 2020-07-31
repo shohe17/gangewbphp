@@ -13,8 +13,8 @@ class Post extends Model
   public function create($data)
   {
       // INSERT INTO (カラム名, ,) VALUES (値, 値, 値,)
-      //処理を準備 
-      $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(id, title, image_at) VALUE(?, ?, ?)');
+      //データ挿入処理を準備 
+      $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(title, created_at) VALUE(?, ?)');
       
       //実行
       $stmt->execute($data);
