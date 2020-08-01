@@ -11,13 +11,16 @@ class Post extends Model
   protected $table = 'posts';
   //createメソッド指定
   public function create($data)
-  {
+  { 
       // INSERT INTO (カラム名, ,) VALUES (値, 値, 値,)
-      //処理を準備 
-      $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(id, title, image_at) VALUE(?, ?, ?)');
+      //データ挿入処理を準備 
+      $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(title, user_id, image_at, created_at, updated_at) VALUE(?, ?, ?, ?, ?)');
       
       //実行
+      // var_dump($data);
+      // exit;
       $stmt->execute($data);
+    
   }
 
   //postのタイトル名で見つけるメソッド指定
