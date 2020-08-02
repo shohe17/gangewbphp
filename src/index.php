@@ -56,24 +56,28 @@ $posts = $post->getAll();
 </head>
 
 <body>
-    <h1>トップページ</h1>
-    <!-- タイトル表示 -->
-    <!-- 画像表示 -->
-    <div class="row p-3">
-        <!-- 先頭のデータから順に繰り返し -->
-        <?php foreach ($posts as $post) : ?>
-            <div class="col-sm-6 col-md-4 col-lg-3 py-3 py-3">
-                <div class="card">
-                    <!-- dbにはいってるパスを指定したい -->
-                    <img src="<?php echo $post['image_at']; ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $post['title']; ?></h5>
+    <?php include(__DIR__ . '/components/Header.php'); ?>
+    <main>
+        <div class="container" style="height:1300px;">
+            <div class="row mt-5 pt-5">
+                <!-- 先頭のデータから順に繰り返し -->
+                <?php foreach ($posts as $post) : ?>
+                    <div class="col-sm-6 col-md-4 col-lg-3 py-3 py-3">
+                        <div class="card">
+                            <!-- dbにはいってるパスを指定したい -->
+                            <img src="<?php echo $post['image_at']; ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $post['title']; ?></h5>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="col-lg-4 col-md-12">
+                        <?php include(__DIR__ . '/components/Card.php'); ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
-    </div>
-
+        </div>
+    </main>
 </body>
 
 </html>
