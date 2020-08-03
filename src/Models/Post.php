@@ -17,8 +17,7 @@ class Post extends Model
       $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(title, user_id, image_at, created_at, updated_at) VALUE(?, ?, ?, ?, ?)');
       
       //実行
-      // var_dump($data);
-      // exit;
+
       $stmt->execute($data);
     
   }

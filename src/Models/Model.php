@@ -42,11 +42,30 @@ class Model
     $posts = $stmt->fetchAll();
     //戻り値
     return $posts;
+  }
 
+  //dbの中からuser_idを読み込みむメソッドを指定する
+  public function findById()
+  {
 
+    //User_idでデータを読み込む準備をする
+    
+    $stmt = $this->db_manager->dbh->prepare('SELECT * FROM' . $this->table . ' WHERE user_id = ?');
+    
+    //実行
+    $stmt->execute();
+    //実行した値を表示する
+    $posts =  $stmt->fetchAll();
+    //表示する値を引数に返す
+    return $posts;
 
   }
 
+  public function delete($data)
+  {
+    $stmt = $this->db_manager->dbh->prepare('DELETE FROM ' . $this->table . ' WHERE id = ?');
+    return $stmt->execute($data);
+  }
     //フォローボタン
     //いいねボタン
      //コメントボタン
