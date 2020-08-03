@@ -60,6 +60,12 @@ class Model
     return $posts;
 
   }
+
+  public function delete($data)
+  {
+    $stmt = $this->db_manager->dbh->prepare('DELETE FROM ' . $this->table . ' WHERE id = ?');
+    return $stmt->execute($data);
+  }
     //フォローボタン
     //いいねボタン
      //コメントボタン

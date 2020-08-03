@@ -1,15 +1,4 @@
 <?php
-//ファイル１つづつに何をするファイルかコメントアウト
-//ユーザーの投稿を表示するページ
-//コンタクトフォームのギットハブ確認
-
-//dbに接続
-//sqlを実行
-//実行した結果を変数に代入
-//変数の内容を画面に表示
-
-
-
 //一覧表示
 //ファイル読み込み
 require_once('Models/Post.php');
@@ -43,16 +32,22 @@ $posts = $post->getAll();
     <!-- タイトル表示 -->
     <!-- 画像表示 -->
     <div class="row p-3">
+    <a href="posts/create.php">新規投稿</a>
+
            <!-- 先頭のデータから順に繰り返し -->
            <?php foreach ($posts as $post) : ?>
             <div class="col-sm-6 col-md-4 col-lg-3 py-3 py-3">
                 <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title"><?php echo $post['title'];?></h3>
                     <!-- dbにはいってるパスを指定したい -->
                     <img src="<?php echo $post['image_at'];?>" class="card-img-top" alt="...">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $post['title'];?></h5>
-                    </div>
+                  </div>
+                  <a href="posts/edit.php?id=<?php echo $post['id']; ?>">編集</a>
+                  <form action="posts/delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
+                    <button type="submit">削除</button>
+                  </form>
                 </div>
             </div>
           <?php endforeach;?>
