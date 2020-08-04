@@ -7,9 +7,7 @@ require_once('Models/Post.php');
 $post = new Post();
 //$postsはgetall
 
-
 $posts = $post->getAll(); 
-
 
 //オブジェクトにユーザー名を配置
 //オブジェクトにタイトル配置
