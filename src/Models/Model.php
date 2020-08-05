@@ -44,7 +44,6 @@ class Model
     return $posts;
   }
 
-  //dbの中からuser_idを読み込みむメソッドを指定する
   public function findById($id)
   {
     $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');

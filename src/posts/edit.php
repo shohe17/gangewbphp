@@ -22,7 +22,7 @@ $post = (new Post())->findById($id);
 </head>
 <body>
   <h3>画像アップロード</h3>
-  <a href="./index.php" class="col-12">画像一覧へ</a>
+  <a href="/" class="col-12">画像一覧へ</a>
   <form action="update.php" method="post">
     <div>
       <label for="title">ジョジョ立ちのタイトル</label>
@@ -34,6 +34,7 @@ $post = (new Post())->findById($id);
 
     </div> -->
     <div>
+    <img src="<?php echo $post['image_at'];?>" class="card-img-top" alt="...">
       <input type="file" id="image_at">
       <label for="image_at">ファイルを選択</label>
     </div>
