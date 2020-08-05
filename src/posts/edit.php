@@ -1,3 +1,14 @@
+<?php
+
+//ファイル読み込み
+require_once(__DIR__ .'/../Models/Post.php');
+//編集対象のデータ受け取り(dbから？)
+$id = $_GET['id'];
+//左にpostクラスのインスタンスを代入（）
+$post = (new Post())->findById($id);
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +23,10 @@
 <body>
   <h3>画像アップロード</h3>
   <a href="/" class="col-12">画像一覧へ</a>
-  <form action="store.php" method="post">
+  <form action="update.php" method="post">
     <div>
       <label for="title">ジョジョ立ちのタイトル</label>
-      <input type="text" name="title" id="title">
+      <input type="text" name="title" id="title" value="<?php echo $post['title']; ?>">
     </div>
     <!-- 検索、投稿日を自動で出力 -->
     <!-- <div>
@@ -23,10 +34,12 @@
 
     </div> -->
     <div>
+    <img src="<?php echo $post['image_at'];?>" class="card-img-top" alt="...">
       <input type="file" id="image_at">
       <label for="image_at">ファイルを選択</label>
     </div>
     <div>
+      <input name="id" type="hidden" value="<?php echo $post['id']; ?>">
       <button type="submit">送信</button>
     </div>
   </form>
