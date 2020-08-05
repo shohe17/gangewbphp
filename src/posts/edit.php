@@ -1,21 +1,11 @@
 <?php
 
 //ファイル読み込み
-require_once('Models/Post.php');
-//dbから編集対象のデータ受け取り
-$title = $_POST['title'];
-//受け取ったデータを画面に表示
-
-
-// Aは一覧表示とほぼ一緒
-// Bは新規作成とほぼ一緒
-// store.phpは新規作成処理のためのファイルで更新処理のためのファイルで既に作ってるので分けた方がよいと思います。
-
-// 更新画面の動きはTODOアプリと一緒なので、まずはそれを動かした方がよいかも。
-
-// 1. gangの方のdockerとめる
-// 2. Todoの方のdocker動かす
-// でできると思うので
+require_once(__DIR__ .'/../Models/Post.php');
+//編集対象のデータ受け取り(dbから？)
+$id = $_GET['id'];
+//左にpostクラスのインスタンスを代入（）
+$post = (new Post())->findById($id);
 
 ?>
 
@@ -32,11 +22,11 @@ $title = $_POST['title'];
 </head>
 <body>
   <h3>画像アップロード</h3>
-  <a href="index.php" class="col-12">画像一覧へ</a>
-  <form action="store.php" method="post">
+  <a href="./index.php" class="col-12">画像一覧へ</a>
+  <form action="update.php" method="post">
     <div>
       <label for="title">ジョジョ立ちのタイトル</label>
-      <input type="text" name="title" id="title">
+      <input type="text" name="title" id="title" value="<?php echo $post['title']; ?>">
     </div>
     <!-- 検索、投稿日を自動で出力 -->
     <!-- <div>
@@ -48,6 +38,7 @@ $title = $_POST['title'];
       <label for="image_at">ファイルを選択</label>
     </div>
     <div>
+      <input name="id" type="hidden" value="<?php echo $post['id']; ?>">
       <button type="submit">送信</button>
     </div>
   </form>

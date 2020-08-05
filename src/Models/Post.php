@@ -17,7 +17,6 @@ class Post extends Model
       $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(title, user_id, image_at, created_at, updated_at) VALUE(?, ?, ?, ?, ?)');
       
       //実行
-
       $stmt->execute($data);
     
   }
@@ -26,7 +25,7 @@ class Post extends Model
   public function findByTitle($data)
   {
     //処理を準備
-    $stmt = $this->db_manager->dbh->prepare('SELECT * FROM' . $this->table . 'WHERE title LIKE ?');
+    $stmt = $this->db_manager->dbh->prepare('SELECT * FROM' . $this->table . ' WHERE title LIKE ?');
     //実行
     $stmt->execute($data);
     //画面に表示する
@@ -34,6 +33,12 @@ class Post extends Model
     //戻り値
     return $posts;
 
+  }
+
+  public function update($data)
+  {
+    $stmt = $this->db_manager->dbh->prepare('UPDATE ' . $this->table . ' SET title = ? WHERE id = ?');
+    $stmt->execute($data);
   }
 
 

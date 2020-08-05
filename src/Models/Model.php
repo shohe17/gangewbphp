@@ -45,19 +45,12 @@ class Model
   }
 
   //dbの中からuser_idを読み込みむメソッドを指定する
-  public function findById()
+  public function findById($id)
   {
-
-    //User_idでデータを読み込む準備をする
-    
-    $stmt = $this->db_manager->dbh->prepare('SELECT * FROM' . $this->table . ' WHERE user_id = ?');
-    
-    //実行
-    $stmt->execute();
-    //実行した値を表示する
-    $posts =  $stmt->fetchAll();
-    //表示する値を引数に返す
-    return $posts;
+    $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
+    $stmt->execute([$id]);
+    $post = $stmt->fetch();
+    return $post;
 
   }
 
