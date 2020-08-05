@@ -31,7 +31,7 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `title` varchar(30) NOT NULL,
-  `image_at`  text NOT NULL
+  `image_at`  text NOT NULL,
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
