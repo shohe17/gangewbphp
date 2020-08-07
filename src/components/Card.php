@@ -2,17 +2,17 @@
 <div class="card">
 
     <!-- Card image -->
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+    <img class="card-img-top" src="<?php echo $post['image_at']; ?>" alt="Card image cap">
 
     <!-- Card content -->
     <div class="card-body">
         <div class="d-flex justify-content-between">
-            <h4 class="card-title"><a>Card title</a></h4>
+            <h4 class="card-title"><a><?php echo $post['title']; ?></a></h4>
             <div>
-                <a href="">
+                <a method="post" href="/posts/delete.php?id=<?php echo $post['id']; ?>">
                     <i class="fas fa-trash text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
                 </a>
-                <a href="">
+                <a href="/posts/edit.php?id=<?php echo $post['id']; ?>">
                     <i class="fas fa-pen text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
                 </a>
             </div>

@@ -13,7 +13,7 @@ $id = $_GET['id'];
 
 //インスタンス生成 IDで見つける
 //idで見つける関数をもったインスタンスを作成
-$task = (new Post())->findById();
+$task = (new Post())->findById;
 
 
 
