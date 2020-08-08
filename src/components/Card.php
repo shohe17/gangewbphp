@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-between">
             <h4 class="card-title"><a><?php echo $post['title']; ?></a></h4>
             <div>
-                <a method="post" href="/posts/delete.php?id=<?php echo $post['id']; ?>">
+                <a href="/posts/delete.php?id=<?php echo $post['id']; ?>">
                     <i class="fas fa-trash text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
                 </a>
                 <a href="/posts/edit.php?id=<?php echo $post['id']; ?>">

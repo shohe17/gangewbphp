@@ -11,7 +11,7 @@ $user_id = 1;
 $image_at = "/images/posts/default.jpg";
 $update_at = date("Y-m-d H:i:s");   
 
-//Postクラスのインスタンスを$postに代入　
+//Postクラスのインスタンスを$postに代入
 $post = new Post();
 //新規投稿画面から受け取ったデータをdbに挿入
 $post->create([$title, $user_id, $image_at, $currentTime, $update_at]);

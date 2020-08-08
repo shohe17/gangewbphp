@@ -35,7 +35,8 @@
       <br>
       <br>
       <br>
-      <form action="store.php" method="post">
+      <!-- enctype="multipart/form-dataは、要素のtypeでfileを送信するために指定する必要がある -->
+      <form action="store.php" method="post" enctype="multipart/form-data">
           <div>
             <label for="title" >君のジョジョ立ちのタイトルは</label>
             <input type="text" name="title" id="title">
