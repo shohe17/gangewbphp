@@ -41,6 +41,8 @@ class Post extends Model
     $stmt->execute($data);
   }
 
+  
+
 
 
   //画像を選択するメソッド

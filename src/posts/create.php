@@ -35,20 +35,14 @@
       <br>
       <br>
       <br>
-      <!-- enctype="multipart/form-dataは、要素のtypeでfileを送信するために指定する必要がある -->
       <form action="store.php" method="post" enctype="multipart/form-data">
           <div>
             <label for="title" >君のジョジョ立ちのタイトルは</label>
             <input type="text" name="title" id="title">
           </div>
-          <!-- 検索、投稿日を自動で出力 -->
-          <!-- <div>
-            <label for="created_at">created_at</label>
-
-          </div> -->
           <div>
-            <input type="file" id="image_at">
-            <label for="image_at"></label>
+            <input type="file" id="image" name="image">
+            <label for="image" ></label>
           </div>
           <div>
             <button type="submit" class=" btn btn-info ">送信する</button>
