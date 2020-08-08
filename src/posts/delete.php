@@ -10,6 +10,6 @@ $post = new Post();
 $post->delete([$id]);
 
  //リダイレクト
- header('location: http://localhost:8090/index.php');
+ header('location: /');
  exit;
  
