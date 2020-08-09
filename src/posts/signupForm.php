@@ -1,22 +1,6 @@
-<?php
-//一覧表示
-//ファイル読み込み
-require_once('Models/Post.php');
 
-//$postにインスタンスを代入
-$post = new Post();
-//$postsはgetall
-$posts = $post->getAll();
-
-//オブジェクトにユーザー名を配置
-//オブジェクトにタイトル配置
-//オブジェクトに画像を配置
-//オブジェクトのIDをhiddenにする
-//画像クリックで拡大する機能
-?>
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,20 +26,28 @@ $posts = $post->getAll();
     <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <script defer src="./assets/js/app.js"></script>
 </head>
-
-<body>
-    <?php include(__DIR__ . '/components/Header.php'); ?>
-    <main>
-        <div class="container" style="height:1300px;">
-            <div class="row mt-5 pt-5"> 
-                <!-- 先頭のデータから順に繰り返し -->
-                <?php foreach ($posts as $post) : ?>
-                  <div class="col-lg-4 col-md-12">
-                    <?php include(__DIR__ . '/components/Card.php'); ?>
-                  </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </main>
-</body>
+  <body>
+    
+    <div class="container" sryle="height:1300px;">
+      <div class="row mt-5 pt-5">
+        <?php include(__DIR__ . '/../components/Header.php'); ?>
+        
+        <h3 class="col-12 text-info">サインアップ</h3>
+        <br>
+        <br>
+        <br>
+        <form action="signup.php" method="post">
+          <div class="form-group">
+            <p>メールアドレス</p>
+            <input type="email" class="form-control" name="email" placeholder="email" >
+          </div>
+          <div class="form-group">
+            <p>パスワード</p>
+            <input type="password" class="form-control" name="password" placeholder="password">
+          </div>
+            <button type="submit" class=" btn btn-info ">登録</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
