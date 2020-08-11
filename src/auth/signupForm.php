@@ -25,14 +25,14 @@
     <!-- MDB core JavaScript -->
     <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <script defer src="./assets/js/app.js"></script>
-</head>
+  </head>
   <body>
-    
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info text-white scrolling-navbar">
+      <h3>世界のジョジョ立一覧へ</h3>
+  </nav>
     <div class="container" sryle="height:1300px;">
-      <div class="row mt-5 pt-5">
-        <?php include(__DIR__ . '/../components/Header.php'); ?>
-        
-        <h3 class="col-12 text-info">サインアップ</h3>
+      <div class="row mt-5 pt-5">        
+        <h2 class="col-12 text-info">サインアップ</h2>
         <br>
         <br>
         <br>

@@ -31,7 +31,7 @@
     <div class="row mt-5 pt-5">
       <?php include(__DIR__ . '/../components/Header.php'); ?>
       
-      <h3 class="col-12 text-info">画像アップロード</h3>
+      <h2 class="col-12 text-info">画像アップロード</h2>
       <br>
       <br>
       <br>

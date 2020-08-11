@@ -42,7 +42,7 @@ $post = (new Post())->findById($id);
   <div class="container" sryle="height:1300px;">
     <div class="row mt-5 pt-5">
       <?php include(__DIR__ . '/../components/Header.php'); ?>
-      <h3 class="col-12 text-info">投稿の編集</h3>
+      <h2 class="col-12 text-info">投稿の編集</h2>
       <br>
       <br>
       <br>
