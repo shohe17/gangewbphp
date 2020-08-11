@@ -3,13 +3,24 @@
 //ファイル読み込み
 require_once(__DIR__ .'/../Models/Post.php');
 //db接続
-//タイトルデータを受け取り
+//タイトルデータを受け取りz
+$file = $_FILES['image']['tmp_name'];
 $title = $_POST['title'];
 //投稿日データを受け取り
 $currentTime = date("Y-m-d H:i:s");   
 $user_id = 1;
-$image_at = "/images/posts/default.jpg";
 $update_at = date("Y-m-d H:i:s");   
+
+if ($_FILES['image']['error'] !== 4) {
+  $image_at = '/images/posts/' . $_FILES['image']['name'];
+  // 画像の保存
+  // 第一引数が対象のファイル、第2引数が保存先
+  move_uploaded_file($file,  '../images/posts/' . $_FILES['image']['name']);
+// そうでなければ(画像がアップロードされていない場合)
+} else {
+  $image_at = "/images/posts/default.jpg";
+}
+
 
 //Postクラスのインスタンスを$postに代入
 $post = new Post();

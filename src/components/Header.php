@@ -17,7 +17,7 @@
                     <a class="nav-link" href="#">プロフィール設定ページ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ログアウト</a>
+                    <a class="nav-link" href="/auth/signout.php">ログアウト</a>
                 </li>
             </ul>
             <ul class="navbar-nav nav-flex-icons">
@@ -33,6 +33,5 @@
             </ul>
         </div>
     </nav>
-
 </header>
 

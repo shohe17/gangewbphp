@@ -1,5 +1,9 @@
 <?php
-//一覧表示
+
+session_start();
+
+$user = $_SESSION['user'] ?? [];
+
 //ファイル読み込み
 require_once('Models/Post.php');
 
@@ -44,7 +48,48 @@ $posts = $post->getAll();
 </head>
 
 <body>
-    <?php include(__DIR__ . '/components/Header.php'); ?>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info text-white scrolling-navbar">
+            <a class="navbar-brand" href="/"><strong>ホームページ</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">マイページ<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/posts/create.php">投稿ページ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">プロフィール設定ページ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/signout.php">ログアウト</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <span class="text-light mr-5">ログインアドレス：
+                          <?= $user['email'] ?? 'ログインユーザーのメールアドレス' ?>
+                        </span>
+                    </li>
+                </ul>
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main>
         <div class="container" style="height:1300px;">
             <div class="row mt-5 pt-5"> 
@@ -59,19 +104,3 @@ $posts = $post->getAll();
     </main>
 </body>
 </html>
-
-                      <!-- <div class="col-sm-6 col-md-4 col-lg-3 py-3 py-3">
-                        <div class="card">
-                           -->
-                            <!-- dbにはいってるパスを指定したい -->
-                            <!-- <img src="<?php echo $post['image_at']; ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $post['title']; ?></h5>
-                            </div>
-                            <a href="posts/edit.php?id=<?php echo $post['id']; ?>">編集</a>
-                            <form action="posts/delete.php" method="post">
-                              <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
-                              <button type="submit">削除</button>
-                            </form>
-                        </div>
-                    </div> -->

@@ -25,30 +25,29 @@
     <!-- MDB core JavaScript -->
     <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     <script defer src="./assets/js/app.js"></script>
-</head>
-<body>
-  <div class="container" sryle="height:1300px;">
-    <div class="row mt-5 pt-5">
-      <?php include(__DIR__ . '/../components/Header.php'); ?>
-      
-      <h2 class="col-12 text-info">画像アップロード</h2>
-      <br>
-      <br>
-      <br>
-      <form action="store.php" method="post" enctype="multipart/form-data">
-          <div>
-            <label for="title" >君のジョジョ立ちのタイトルは</label>
-            <input type="text" name="title" id="title">
+  </head>
+  <body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info text-white scrolling-navbar">
+      <h3>世界のジョジョ立一覧へ</h3>
+  </nav>
+    <div class="container" sryle="height:1300px;">
+      <div class="row mt-5 pt-5">        
+        <h2 class="col-12 text-info">サインアップ</h2>
+        <br>
+        <br>
+        <br>
+        <form action="signup.php" method="post">
+          <div class="form-group">
+            <p>メールアドレス</p>
+            <input type="email" class="form-control" name="email" placeholder="email" >
           </div>
-          <div>
-            <input type="file" id="image" name="image">
-            <label for="image" ></label>
+          <div class="form-group">
+            <p>パスワード</p>
+            <input type="password" class="form-control" name="password" placeholder="password">
           </div>
-          <div>
-            <button type="submit" class=" btn btn-info ">送信する</button>
-          </div>
-      </form>
+            <button type="submit" class=" btn btn-info ">登録</button>
+        </form>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
+</html>
