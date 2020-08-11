@@ -34,8 +34,6 @@ class User extends Model
 
   }
 
-  // 読み込み処理
-
 
 }
 

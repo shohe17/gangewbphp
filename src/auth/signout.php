@@ -8,5 +8,5 @@ $_SESSION = [];
 session_destroy();
 
 // リダイレクト
-header('location: signinForm.php');
+header('location: /auth/signinForm.php');
 exit;
